@@ -1,0 +1,54 @@
+"
+"  _gvimrc Mac term用
+"
+
+"sytaxのやつ
+syntax on
+
+"encodeのやつ
+set encoding=UTF-8
+set fileencoding=UTF-8
+set termencoding=UTF-8
+
+"fileの扱いのやつ 
+set hidden   "編集中でも開ける
+set autoread "変更されたとき自動読み込み
+
+"backup要らない子
+set nobackup
+set noswapfile
+set noundofile
+
+"クリップボードに入れるやつ
+set clipboard=unnamed
+
+"行番号のやつ
+set number
+
+"indentのやつ
+set shiftwidth=4    "行頭での<Tab>の幅
+set tabstop=4   "行頭以外での<Tab>の幅
+set expandtab   "<Tab>は<Space>に
+set softtabstop=4   "<Tab> -> <Space>4つ
+set cindent "Cっぽい自動インデント
+
+" 改行 & スペースを目立たないようにするやつ
+"set list
+"hi NonText guifg=#555555
+"hi SpecialKey guifg=#444444
+
+"Winぽいやつ
+source $VIMRUNTIME/mswin.vim "win用のコマンド(ctrl+cとかvなどを使用)
+set backspace=indent,eol,start
+set whichwrap=b,s,h,l,<,>,[,] "行頭、行末で止まらない
+
+"すごい動くやつ
+nnoremap H 10h
+nnoremap J 10j  
+nnoremap K 10k
+nnoremap L 10l 
+
+"u の反対のやつ(redo)
+nnoremap U <C-r>
+
+
