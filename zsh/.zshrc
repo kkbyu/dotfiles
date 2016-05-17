@@ -43,11 +43,30 @@ setopt prompt_subst
 
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
+# git command
 alias gst='git status -s -b && git stash list'
 gcm () { git commit -m "$*" }
 
-alias ls='ls -Gla'
+gsta (){
+      if [ $# -eq 1 ]; then
+          git add `git status -s -b | grep -v "^#" | awk '{print$1="";print}' | grep -v "^$" | awk "NR==$1"`
+      else
+          exit 1
+      fi
+}
+
+gstd (){
+      if [ $# -eq 1 ]; then
+          git diff -- `git status -s -b | grep -v "^#" | awk '{print$1="";print}' | grep -v "^$" | awk "NR==$1"`
+      else
+          exit 1
+      fi
+}
+
 alias glgg='git log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d''
+
+#ls
+alias ls='ls -Gla'
 
 #scala path
 export PATH=$PATH:/usr/local/src/scala/bin
