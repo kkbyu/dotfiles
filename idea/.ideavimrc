@@ -1,0 +1,21 @@
+"
+" .ideavimrc mac用
+"
+
+"数行余裕があるうちにスクロールするやつ
+set scrolloff=5
+
+"行番号のやつ
+set number
+
+"u の反対のやつ(redo)
+nnoremap U <C-r>
+
+"すごい動くやつ
+nnoremap H 10h
+"nnoremap J 10j 連結で使うから解放
+"nnoremap K 10k
+nnoremap L 10l
+
+nnoremap <S-Up>   10k
+nnoremap <S-Down>   10j
