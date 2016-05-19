@@ -66,7 +66,16 @@ gstd (){
 alias glgg='git log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d''
 
 #ls
-alias ls='ls -Gla'
+case "${OSTYPE}" in
+  darwin*)
+    # Mac
+    alias ls="ls -laGF"
+      ;;
+  linux*)
+    # Linux
+    alias ls='ls -Fla --color'
+      ;;
+esac
 
 #history
 alias his='history'
