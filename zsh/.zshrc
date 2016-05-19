@@ -68,6 +68,9 @@ alias glgg='git log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset
 #ls
 alias ls='ls -Gla'
 
+#history
+alias his='history'
+
 #scala path
 export PATH=$PATH:/usr/local/src/scala/bin
 export SCALA_HOME=/usr/local/src/scala
