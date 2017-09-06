@@ -19,3 +19,10 @@ nnoremap L 10l
 
 nnoremap <S-Up>   10k
 nnoremap <S-Down>   10j
+
+"ESCで日本語OFF
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+
