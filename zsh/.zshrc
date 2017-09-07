@@ -1,6 +1,7 @@
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 
 fpath=(/path/to/homebrew/share/zsh-completions $fpath)
+PS1="[${USER}]%(!.#.$) "
 
 autoload -U compinit
 compinit -u
@@ -80,21 +81,9 @@ esac
 #history
 alias his='history'
 
-#scala path
-export PATH=$PATH:/usr/local/src/scala/bin
-export SCALA_HOME=/usr/local/src/scala
-
-#brew etc
-export PATH=$PATH:/usr/local/bin
-
-#android sdk
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-#Kobito
-alias kobito="open -a Kobito"
-
-#npm
-if [ -d ${HOME}/node_modules/.bin ]; then
-    export PATH=${PATH}:${HOME}/node_modules/.bin
-fi
-
+#share_history
+setopt share_history
+setopt hist_no_store
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
