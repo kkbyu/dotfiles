@@ -81,6 +81,16 @@ esac
 #history
 alias his='history'
 
+#peco
+function peco-history-selection() {
+        BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+        CURSOR=$#BUFFER
+        zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
 #share_history
 setopt share_history
 setopt hist_no_store
