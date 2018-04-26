@@ -26,3 +26,19 @@ set iminsert=0 imsearch=0
 set noimcmdline
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
+"検索系
+set hlsearch
+set ignorecase smartcase
+
+"分割窓の分割と移動
+nnoremap <C-w>v :action MoveTabRight<CR>
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+
+"タブの移動
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+nnoremap <c-s-tab> gT
+nnoremap <c-tab> gt
+
+
