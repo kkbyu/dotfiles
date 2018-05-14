@@ -33,7 +33,7 @@ set ignorecase smartcase
 "分割窓の分割と移動
 nnoremap <C-w>v :action MoveTabRight<CR>
 nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
 
 "タブの移動
 nnoremap <a-h> gT
