@@ -32,7 +32,7 @@ export PATH="${PYENV_ROOT}/bin:$PATH"
 eval "$(pyenv init -)"
 
 #PHP7
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php@7.0)/bin:$PATH"
 
 
 #open alias
