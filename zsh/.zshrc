@@ -64,7 +64,7 @@ gstd (){
       fi
 }
 
-alias glgg='git log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d''
+alias glgg="git log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d'"
 
 #ls
 case "${OSTYPE}" in
@@ -97,3 +97,5 @@ setopt hist_no_store
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+
+eval "$(rbenv init -)"
