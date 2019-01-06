@@ -66,6 +66,8 @@ gstd (){
 
 alias glgg="git log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d'"
 
+alias glggg="git log --graph --date-order --pretty=format:'%Cblue%h %Cgreen%ci %Cred%an %Cblue%m %Creset%s %Cred%d'"
+
 #ls
 case "${OSTYPE}" in
   darwin*)
@@ -99,3 +101,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 eval "$(rbenv init -)"
+
+#コマンドラインでコメントを有効
+setopt interactivecomments
+

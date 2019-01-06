@@ -40,3 +40,5 @@ eval "$(pyenv init -)"
 alias kobito="open -a Kobito"
 
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
