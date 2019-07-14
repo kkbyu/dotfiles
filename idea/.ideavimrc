@@ -41,4 +41,6 @@ nnoremap <a-l> gt
 nnoremap <c-s-tab> gT
 nnoremap <c-tab> gt
 
-
+"キャメルケースで移動
+nnoremap w [w
+nnoremap b [b
