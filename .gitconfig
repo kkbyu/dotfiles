@@ -1,0 +1,8 @@
+[user]
+  name = kkb
+  email = kkbyu0@gmail.com
+[core]
+#  excludesfile = ~/.gitignore 
+  autocrlf = input #CRLF自動変換
+  editor = vim
+
