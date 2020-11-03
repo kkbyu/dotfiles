@@ -100,8 +100,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-eval "$(rbenv init -)"
-
 #コマンドラインでコメントを有効
 setopt interactivecomments
 
