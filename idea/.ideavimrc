@@ -13,8 +13,6 @@ nnoremap U <C-r>
 
 "すごい動くやつ
 nnoremap H 10h
-"nnoremap J 10j 連結で使うから解放
-"nnoremap K 10k
 nnoremap L 10l
 
 nnoremap <S-Up>   10k
@@ -34,6 +32,7 @@ set ignorecase smartcase
 nnoremap <C-w>v :action MoveTabRight<CR>
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
+nnoremap <c-j> :action ActivateTerminalToolWindow<CR>
 
 "タブの移動
 nnoremap <a-h> gT
