@@ -44,3 +44,7 @@ nnoremap <c-tab> gt
 "キャメルケースで移動
 nnoremap w [w
 nnoremap b [b
+
+"ハイライト消す
+nnoremap <ESC><ESC> :nohl<CR>
+
