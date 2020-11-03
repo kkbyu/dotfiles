@@ -105,3 +105,5 @@ eval "$(rbenv init -)"
 #コマンドラインでコメントを有効
 setopt interactivecomments
 
+#docker
+alias dsa='docker stop $(docker ps -q);docker ps'
