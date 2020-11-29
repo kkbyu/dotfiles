@@ -126,3 +126,8 @@ setopt interactivecomments
 
 #docker
 alias dsa='docker stop $(docker ps -q);docker ps'
+
+#nvm
+if [ -e $HOME/.nvm/nvm.sh ]; then
+  source $HOME/.nvm/nvm.sh
+fi
