@@ -1,0 +1,31 @@
+cask_args appdir: "/Applications"
+tap "homebrew/cask"
+
+brew "gibo"
+brew "git"
+brew "jq"
+brew "nvm"
+brew "peco"
+brew "tree"
+brew "vim"
+brew "wget"
+brew "zsh"
+
+cask "google-chrome"
+cask "firefox"
+
+cask "iterm2"
+cask "intellij-idea"
+
+cask "notion"
+cask "figma"
+cask "eagle"
+cask "simplenote"
+
+cask "slack"
+cask "thunderbird"
+cask "zoom"
+cask "bathyscaphe"
+
+brew "docker"
+cask "docker"
