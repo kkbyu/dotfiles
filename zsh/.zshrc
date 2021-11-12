@@ -125,4 +125,11 @@ SAVEHIST=1000000
 setopt interactivecomments
 
 #docker
+alias dp='docker ps'
 alias dsa='docker stop $(docker ps -q);docker ps'
+
+#nvm
+if [ -e $(brew --prefix nvm)/nvm.sh ]; then
+  export NVM_DIR="${HOME}/.nvm"
+  source $(brew --prefix nvm)/nvm.sh
+fi
