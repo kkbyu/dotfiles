@@ -19,13 +19,14 @@ cask "intellij-idea"
 
 cask "notion"
 cask "figma"
-cask "eagle"
-cask "simplenote"
 
 cask "slack"
 cask "thunderbird"
 cask "zoom"
 cask "bathyscaphe"
 
+cask "google-japanese-ime"
 brew "docker"
 cask "docker"
+
+cask "dropbox"
