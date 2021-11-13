@@ -6,3 +6,5 @@
   autocrlf = input #CRLF自動変換
   editor = vim
 
+[init]
+	defaultBranch = master
