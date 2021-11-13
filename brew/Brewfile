@@ -30,3 +30,5 @@ brew "docker"
 cask "docker"
 
 cask "dropbox"
+cask "google-drive"
+cask "amazon-photos"
