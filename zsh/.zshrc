@@ -48,7 +48,7 @@ setopt prompt_subst
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
 # git command
-alias gst='git status -s -b && git stash list'
+alias gst='git status -s -b -uall && git stash list'
 gcm () { git commit -m "$*" }
 
 gsta (){
