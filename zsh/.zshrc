@@ -47,6 +47,16 @@ setopt prompt_subst
 
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
+# alias
+alias ll='ls -lh'
+alias ..="cd .."
+
+# mkdir + cd
+function mc() {
+    mkdir -p "$@" && cd "$@"
+}
+
+
 # git command
 alias gst='git status -s -b -uall && git stash list'
 gcm () { git commit -m "$*" }
@@ -129,7 +139,12 @@ alias dp='docker ps'
 alias dsa='docker stop $(docker ps -q);docker ps'
 
 #nvm
-if [ -e $(brew --prefix nvm)/nvm.sh ]; then
-  export NVM_DIR="${HOME}/.nvm"
-  source $(brew --prefix nvm)/nvm.sh
-fi
+#if [ -e $(brew --prefix nvm)/nvm.sh ]; then
+#  export NVM_DIR="${HOME}/.nvm"
+#  source $(brew --prefix nvm)/nvm.sh
+#fi
+
+#asdf
+
+alias af='asdf'
+source /opt/homebrew/opt/asdf/asdf.sh
