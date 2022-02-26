@@ -1,0 +1,39 @@
+cask_args appdir: "/Applications"
+tap "homebrew/cask"
+
+brew "gibo"
+brew "git"
+brew "jq"
+brew "nvm"
+brew "peco"
+brew "tree"
+brew "vim"
+brew "wget"
+brew "zsh"
+brew "zsh-completions"
+brew "asdf"
+brew "gpg"
+
+cask "google-chrome"
+cask "firefox"
+
+cask "iterm2"
+cask "intellij-idea"
+
+cask "notion"
+cask "figma"
+
+cask "slack"
+cask "thunderbird"
+cask "zoom"
+cask "bathyscaphe"
+
+cask "google-japanese-ime"
+brew "docker"
+cask "docker"
+
+cask "dropbox"
+cask "google-drive"
+cask "amazon-photos"
+
+cask "Kobo"
