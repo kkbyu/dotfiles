@@ -145,7 +145,17 @@ alias dsa='docker stop $(docker ps -q);docker ps'
 #  source $(brew --prefix nvm)/nvm.sh
 #fi
 
-#asdf
+# asdf & brew 
+# switch m1 / intel
 
 alias af='asdf'
-source /opt/homebrew/opt/asdf/asdf.sh
+
+if [ "$(uname -m)" = "arm64" ]; then
+  source /opt/homebrew/opt/asdf/asdf.sh
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  source /usr/local/Cellar/asdf/0.9.0/asdf.sh
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
+
