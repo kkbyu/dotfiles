@@ -149,7 +149,7 @@ if [ "$(uname -m)" = "arm64" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   source /usr/local/Cellar/asdf/0.9.0/asdf.sh
-  eval $(/opt/homebrew/bin/brew shellenv)
+  eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 
