@@ -139,12 +139,6 @@ alias dps='docker ps'
 alias dp='docker ps'
 alias dsa='docker stop $(docker ps -q);docker ps'
 
-#nvm
-#if [ -e $(brew --prefix nvm)/nvm.sh ]; then
-#  export NVM_DIR="${HOME}/.nvm"
-#  source $(brew --prefix nvm)/nvm.sh
-#fi
-
 # asdf & brew 
 # switch m1 / intel
 
