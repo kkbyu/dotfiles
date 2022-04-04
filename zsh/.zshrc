@@ -55,7 +55,10 @@ alias ..="cd .."
 function mc() {
     mkdir -p "$@" && cd "$@"
 }
-
+# idea
+function idea() {
+    open -na "IntelliJ IDEA.app" --args "$@"
+}
 
 # git command
 alias gst='git status -s -b -uall && git stash list'
@@ -148,3 +151,6 @@ alias dsa='docker stop $(docker ps -q);docker ps'
 
 alias af='asdf'
 source /opt/homebrew/opt/asdf/asdf.sh
+
+
+
