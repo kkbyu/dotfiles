@@ -62,6 +62,7 @@ function idea() {
 
 # git command
 alias gst='git status -s -b -uall && git stash list'
+alias gbd='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
 gcm () { git commit -m "$*" }
 
 gsta (){
@@ -147,13 +148,25 @@ alias dsa='docker stop $(docker ps -q);docker ps'
 
 alias af='asdf'
 #source /opt/homebrew/opt/asdf/asdf.sh
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-if [ "$(uname -m)" = "arm64" ]; then
-  source /opt/homebrew/opt/asdf/asdf.sh
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  source /usr/local/Cellar/asdf/0.9.0/asdf.sh
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
+#if [ "$(uname -m)" = "arm64" ]; then
+#  source /opt/homebrew/opt/asdf/asdf.sh
+#  eval "$(/opt/homebrew/bin/brew shellenv)"
+#else
+# source /usr/local/Cellar/asdf/0.9.0/asdf.sh
+#  eval "$(/usr/local/bin/brew shellenv)"
+#fi
 
+#create project (github) & open IntelliJ
+create_p (){
+      if [ $# -eq 1 ]; then
+          gh repo create $1 --private -d '$1' 
+          git clone git@github.com:kkbyu/$1.git 
+          idea $1
+      else
+          exit 1
+      fi
+}
 
+alias ghv='gh repo view --web'
