@@ -55,6 +55,8 @@ alias ..="cd .."
 function mc() {
     mkdir -p "$@" && cd "$@"
 }
+# open tmp
+alias ot='open ~/tmp'
 # idea
 function idea() {
     open -na "IntelliJ IDEA.app" --args "$@"
@@ -64,6 +66,8 @@ function idea() {
 alias gst='git status -s -b -uall && git stash list'
 alias gbd='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
 gcm () { git commit -m "$*" }
+
+gca () { aicommits --generate 5 }
 
 gsta (){
       if [ $# -eq 1 ]; then
@@ -170,3 +174,4 @@ create_p (){
 }
 
 alias ghv='gh repo view --web'
+
