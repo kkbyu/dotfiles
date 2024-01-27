@@ -165,10 +165,12 @@ source /opt/homebrew/opt/asdf/libexec/asdf.sh
 #create project (github) & open IntelliJ
 create_p (){
       if [ $# -eq 1 ]; then
-          gh repo create $1 --private -d '$1' 
-          git clone git@github.com:kkbyu/$1.git 
-          idea $1
+          repo_name="$1"
+          gh repo create "$repo_name" --private -d "repo_name"
+          git clone git@github.com:kkbyu/$repo_name.git 
+          idea "repo_nane"
       else
+          echo "Usage: create_p <repository_name>"
           exit 1
       fi
 }
