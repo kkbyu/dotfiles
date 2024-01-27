@@ -166,9 +166,9 @@ source /opt/homebrew/opt/asdf/libexec/asdf.sh
 create_p (){
       if [ $# -eq 1 ]; then
           repo_name="$1"
-          gh repo create "$repo_name" --private -d "repo_name"
+          gh repo create "$repo_name" --private -d "$repo_name"
           git clone git@github.com:kkbyu/$repo_name.git 
-          idea "repo_nane"
+          idea "$repo_name"
       else
           echo "Usage: create_p <repository_name>"
           exit 1
