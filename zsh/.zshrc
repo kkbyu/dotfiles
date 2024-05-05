@@ -61,10 +61,15 @@ alias ot='open ~/tmp'
 function idea() {
     open -na "IntelliJ IDEA.app" --args "$@"
 }
+# ssh & tmux
+alias ss='cd ~/.ssh && tmux'
 
 # git command
 alias gst='git status -s -b -uall && git stash list'
 alias gbd='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
+alias ghc='gh pr create --fill'
+alias ghm='gh pr merge --merge'
+alias ghcm='ghc && ghm'
 gcm () { git commit -m "$*" }
 
 gca () { aicommits --generate 5 }
