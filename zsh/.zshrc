@@ -156,16 +156,12 @@ alias dsa='docker stop $(docker ps -q);docker ps'
 # switch m1 / intel
 
 alias af='asdf'
-#source /opt/homebrew/opt/asdf/asdf.sh
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-#if [ "$(uname -m)" = "arm64" ]; then
-#  source /opt/homebrew/opt/asdf/asdf.sh
-#  eval "$(/opt/homebrew/bin/brew shellenv)"
-#else
-# source /usr/local/Cellar/asdf/0.9.0/asdf.sh
-#  eval "$(/usr/local/bin/brew shellenv)"
-#fi
+if [ "$(uname -m)" = "arm64" ]; then
+  source /opt/homebrew/opt/asdf/asdf.sh
+else
+ source /usr/local/opt/asdf/libexec/asdf.sh
+fi
 
 #create project (github) & open IntelliJ
 create_p (){
