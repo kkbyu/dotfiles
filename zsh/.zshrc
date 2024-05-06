@@ -55,15 +55,24 @@ alias ..="cd .."
 function mc() {
     mkdir -p "$@" && cd "$@"
 }
+# open tmp
+alias ot='open ~/tmp'
 # idea
 function idea() {
     open -na "IntelliJ IDEA.app" --args "$@"
 }
+# ssh & tmux
+alias ss='cd ~/.ssh && tmux'
 
 # git command
 alias gst='git status -s -b -uall && git stash list'
 alias gbd='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
+alias ghc='gh pr create --fill'
+alias ghm='gh pr merge --merge'
+alias ghcm='ghc && ghm'
 gcm () { git commit -m "$*" }
+
+gca () { aicommits --generate 5 }
 
 gsta (){
       if [ $# -eq 1 ]; then
@@ -161,12 +170,15 @@ source /opt/homebrew/opt/asdf/libexec/asdf.sh
 #create project (github) & open IntelliJ
 create_p (){
       if [ $# -eq 1 ]; then
-          gh repo create $1 --private -d '$1' 
-          git clone git@github.com:kkbyu/$1.git 
-          idea $1
+          repo_name="$1"
+          gh repo create "$repo_name" --private -d "$repo_name"
+          git clone git@github.com:kkbyu/$repo_name.git 
+          idea "$repo_name"
       else
+          echo "Usage: create_p <repository_name>"
           exit 1
       fi
 }
 
 alias ghv='gh repo view --web'
+

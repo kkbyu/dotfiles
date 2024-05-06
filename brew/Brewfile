@@ -1,5 +1,5 @@
 cask_args appdir: "/Applications"
-tap "homebrew/cask"
+#tap "homebrew/cask"
 
 brew "gibo"
 brew "git"
@@ -15,11 +15,14 @@ brew "asdf"
 brew "gpg"
 brew "gh"
 brew "webp"
+brew "tmux"
 
 cask "google-chrome"
 cask "firefox"
 
+cask "raycast"
 cask "iterm2"
+cask "warp"
 cask "intellij-idea"
 
 cask "notion"
@@ -27,6 +30,7 @@ cask "figma"
 
 cask "slack"
 cask "thunderbird"
+cask "readdle-spark"
 cask "zoom"
 cask "bathyscaphe"
 
@@ -36,7 +40,7 @@ cask "docker"
 
 cask "dropbox"
 cask "google-drive"
-cask "amazon-photos"
+#cask "amazon-photos"
 
 cask "Kobo"
 cask "kindle"
