@@ -16,13 +16,15 @@ brew "gpg"
 brew "gh"
 brew "webp"
 brew "tmux"
+brew "ollama"
 
 cask "google-chrome"
 cask "firefox"
+cask "arc"
 
 cask "raycast"
 cask "iterm2"
-cask "warp"
+#cask "warp"
 cask "intellij-idea"
 
 cask "notion"
@@ -46,4 +48,5 @@ cask "Kobo"
 cask "kindle"
 
 cask "cyberduck"
+#cask "chatgpt"
 

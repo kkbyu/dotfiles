@@ -158,9 +158,10 @@ alias dsa='docker stop $(docker ps -q);docker ps'
 alias af='asdf'
 
 if [ "$(uname -m)" = "arm64" ]; then
-  source /opt/homebrew/opt/asdf/asdf.sh
+#  source /opt/homebrew/Cellar/asdf/0.14.0/libexec/asdf.sh
+  source $(brew --prefix asdf)/libexec/asdf.sh
 else
- source /usr/local/opt/asdf/libexec/asdf.sh
+  source /usr/local/opt/asdf/libexec/asdf.sh
 fi
 
 #create project (github) & open IntelliJ
