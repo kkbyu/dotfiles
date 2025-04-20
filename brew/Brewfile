@@ -18,6 +18,7 @@ brew "gh"
 brew "webp"
 brew "tmux"
 brew "ollama"
+brew "uv"
 
 cask "google-chrome"
 cask "firefox"

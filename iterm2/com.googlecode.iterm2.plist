@@ -285,6 +285,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Background Image Mode</key>
+			<integer>0</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -301,7 +303,7 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -726,6 +728,8 @@
 			<string></string>
 			<key>Silence Bell</key>
 			<false/>
+			<key>Space</key>
+			<integer>-1</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -733,7 +737,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.20095246010638307</real>
+			<real>0.30095246010638316</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -915,6 +919,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Background Image Mode</key>
+			<integer>0</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1006,11 +1012,9 @@
 				<real>0.73333334922790527</real>
 			</dict>
 			<key>Guid</key>
-			<string>5B0258E4-04DC-417C-92D7-78A409141C31</string>
+			<string>89B53592-EF33-483D-99EA-94A05EDB577B</string>
 			<key>Has Hotkey</key>
 			<true/>
-			<key>Hide After Opening</key>
-			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
@@ -1032,7 +1036,7 @@
 			<key>HotKey Window AutoHides</key>
 			<false/>
 			<key>HotKey Window Dock Click Action</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>HotKey Window Floats</key>
 			<false/>
 			<key>HotKey Window Reopens On Activation</key>
@@ -1106,16 +1110,18 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
-				<key>0x74-0x100000-0x0</key>
+				<key>0x74-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>27</integer>
-					<key>Label</key>
-					<string></string>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
 					<key>Text</key>
-					<string>5B0258E4-04DC-417C-92D7-78A409141C31</string>
+					<string>89B53592-EF33-483D-99EA-94A05EDB577B</string>
 					<key>Version</key>
-					<integer>1</integer>
+					<integer>2</integer>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -1365,8 +1371,6 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>Monaco 12</string>
-			<key>Open Toolbelt</key>
-			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>

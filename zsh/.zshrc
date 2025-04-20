@@ -173,7 +173,7 @@ fi
 create_p (){
       if [ $# -eq 1 ]; then
           repo_name="$1"
-          gh repo create "$repo_name" --private -d "$repo_name"
+          gh repo create "$repo_name" --private -d "$repo_name" --add-readme
           git clone git@github.com:kkbyu/$repo_name.git 
           idea "$repo_name"
       else
@@ -181,6 +181,49 @@ create_p (){
           exit 1
       fi
 }
+# 上記の改良版
+ghidea () {
+  if [ $# -ne 1 ]; then
+    echo "Usage: ghidea <repository_name>"
+    return 1
+  fi
+
+  repo_name="$1"
+
+  if [[ ! "$repo_name" =~ ^[a-zA-Z0-9._-]+$ ]]; then
+    echo "❌ Invalid repository name: $repo_name"
+    return 2
+  fi
+
+  if [ -d "$repo_name" ]; then
+    echo "⚠️ Directory '$repo_name' already exists. Aborting."
+    return 3
+  fi
+
+  user=$(gh api user --jq .login 2>/dev/null)
+  if [ -z "$user" ]; then
+    echo "❌ Failed to get GitHub username."
+    return 4
+  fi
+
+  if ! gh repo create "$repo_name" --private -d "$repo_name" --add-readme; then
+    echo "❌ Failed to create GitHub repository."
+    return 5
+  fi
+
+  if ! git clone "git@github.com:${user}/${repo_name}.git"; then
+    echo "❌ Failed to clone repository."
+    return 6
+  fi
+
+  if ! idea "$repo_name"; then
+    echo "❌ Failed to open project in IntelliJ IDEA."
+    return 7
+  fi
+
+  echo "✅ Project '$repo_name' created and opened in IntelliJ IDEA!"
+}
+
 
 alias ghv='gh repo view --web'
 
