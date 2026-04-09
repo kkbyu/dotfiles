@@ -120,25 +120,6 @@ __pycache__/
 # C extensions
 *.so
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -193,11 +174,6 @@ celerybeat-schedule
 # dotenv
 .env
 
-# virtualenv
-.venv/
-venv/
-ENV/
-
 # Spyder project settings
 .spyderproject
 
@@ -205,3 +181,5 @@ ENV/
 .ropeproject
 
 
+
+**/.claude/settings.local.json

@@ -55,6 +55,7 @@ RPROMPT='[`rprompt-git-current-branch`%~]'
 # alias
 alias ll='ls -lh'
 alias ..="cd .."
+alias python='python3'
 
 # mkdir + cd
 function mc() {
@@ -70,11 +71,50 @@ function idea() {
 alias ss='cd ~/.ssh && tmux'
 
 # git command
-alias gst='git status -s -b -uall && git stash list'
+_gst_index_file() {
+  echo "${TMPDIR:-/tmp}/gst-index-${UID}-${$}"
+}
+
+gst () {
+  local index_file
+  index_file="$(_gst_index_file)"
+
+  git -c color.status=always status -b --short -uall | perl -pe 'BEGIN { $n = 0 } if ($. > 1) { s/^/sprintf("%2d ", ++$n)/e }'
+  git status --short -uall | awk '{ print substr($0, 4) }' >! "$index_file"
+  git stash list
+}
+
+rm () {
+  if [ $# -eq 1 ] && [[ "$1" =~ ^[0-9]+$ ]]; then
+    local index_file target
+    index_file="$(_gst_index_file)"
+
+    if [ ! -f "$index_file" ]; then
+      echo "rm: gst を先に実行してください" >&2
+      return 1
+    fi
+
+    target=$(awk "NR==$1" "$index_file")
+    if [ -z "$target" ]; then
+      echo "rm: 番号 $1 は見つかりません" >&2
+      return 1
+    fi
+
+    command rm -- "$target"
+    return $?
+  fi
+
+  command rm "$@"
+}
+
 alias gbd='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
 alias ghc='gh pr create --fill'
 alias ghm='gh pr merge --merge'
 alias ghcm='ghc && ghm'
+alias ｇｓｔ='gst'
+alias ｇか='gca'
+alias ｇｃｍ='gcm'
+
 gcm () { git commit -m "$*" }
 
 gca () { aicommits --generate 5 }
@@ -169,6 +209,9 @@ else
   source /usr/local/opt/asdf/libexec/asdf.sh
 fi
 
+# laradockのworkspace に入る
+alias dws='docker exec --user=laradock -it $(docker ps --format "{{.Names}}" | grep workspace | head -n 1) /bin/bash'
+
 #create project (github) & open IntelliJ
 create_p (){
       if [ $# -eq 1 ]; then
@@ -227,3 +270,9 @@ ghidea () {
 
 alias ghv='gh repo view --web'
 
+. "/Users/kkb/.deno/env"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/kkb/.antigravity/antigravity/bin:$PATH"
